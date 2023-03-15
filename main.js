@@ -10,13 +10,13 @@ form.addEventListener("submit", function(evento){
 
 function salvarItem(){
     const comprasItem = itensInput.value;
-    const checarDuplicado = listaItem.some((elemento) => elemento.valor === comprasItem);
+    const checarDuplicado = listaItem.some((elemento) => elemento.valor.toUpperCase() === comprasItem.toUpperCase());
 
     if(checarDuplicado){
         alert('item ja existe');
     } else
     listaItem.push({
-        valor: comprasItem;
+        valor: comprasItem
     })
     console.log(listaItem); 
 }
